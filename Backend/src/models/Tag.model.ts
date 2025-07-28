@@ -1,8 +1,10 @@
-import { model, Schema } from "mongoose"
+import { model, Schema } from "mongoose";
 
+const TagSchema = new Schema(
+  {
+    title: { type: String, required: true, unique: true },
+  },
+  { timestamps: true }
+);
 
-const TagSchema = new Schema({
-    title: {type: String, required: true, unique: true}
-},{timestamps: true})
-
-export const Tag = model("Tag", TagSchema)
+export const Tag = model("Tag", TagSchema);
